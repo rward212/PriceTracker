@@ -10,6 +10,7 @@ bs4 = "*"
 price-parser = "*"
 lxml = "*"
 jinja2 = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
