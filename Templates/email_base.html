@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <title>Product Watch List</title>
 </head>
 <body>
     {% block content %}
+        <ul>
+            {% for product in context %}
+                <li>{{ product.name }} is on sale for ${{ product.price }}</li>
+            {% endfor %}
+        </ul>
     {% endblock %}
 </body>
 </html>
