@@ -1,0 +1,36 @@
+body {
+  background-color: #BFDDE0;
+}
+
+table, th, td {
+    border: 2px solid darkslategrey;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+.center-content {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.tall-input {
+    height: 40px; /* Adjust the height as needed */
+}
+
+.url-column {
+    max-width: 400px; /* Adjust the width as needed */
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.form-input {
+    height: 40px;
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.wrap-text {
+    white-space: normal; /* Allow text to wrap */
+    overflow-wrap: anywhere; /* Break long words */
+}

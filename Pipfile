@@ -11,6 +11,7 @@ price-parser = "*"
 lxml = "*"
 jinja2 = "*"
 python-dotenv = "*"
+flask = "*"
 
 [dev-packages]
 

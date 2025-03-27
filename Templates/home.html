@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="center-content">Watch List</h1>
+    <table class="center-content">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Alert Price</th>
+                <th>CSS Selector</th>
+                <th >URL</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+                <tr>
+                    <td>{{ product['id'] }}</td>
+                    <td><a href="{{ product['url'] }}">{{ product['product'] }}</a></td>
+                    <td>${{ product['alert_price'] }}</td>
+                    <td>{{ product['css_selector'] }}</td>
+                    <td class="url-column">{{ product['url'] }}</td>
+                    <td>
+                        <form action="{{ url_for('delete', id=product['id']) }}" method="post" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+
+                        <form action="{{ url_for('edit', id=product['id']) }}" method="get" style="display:inline;">
+                            <button type="submit">Edit</button>
+                        </form>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <form action="{{ url_for('add') }}" method="post">
+                    <td>New</td>
+                    <td><input type="text" name="name" class="form-input" required></td>
+                    <td><input type="number" step="5" name="alert_price" class="tall-input form-input" required></td>
+                    <td><input type="text" name="css_selector" class="tall-input form-input" required></td>
+                    <td><input type="text" name="url" class="tall-input form-input" required></td>
+                    <td><button type="submit">Add</button></td>
+
+                </form>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

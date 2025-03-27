@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="center-content">Edit Product</h1>
+<form action="{{ url_for('edit', id=product[0]) }}" method="post" class="center-content">
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{ product[1] }}" class="tall-input wrap-text" required>
+    <label for="url">URL:</label>
+    <input type="text" name="url" value="{{ product[2] }}" class="tall-input wrap-text" required>
+    <label for="alert_price">Alert Price:</label>
+    <input type="number" step="0.01" name="alert_price" value="{{ product[3] }}" class="tall-input wrap-text" required>
+    <label for="css_selector">CSS Selector:</label>
+    <input type="text" name="css_selector" value="{{ product[4] }}" class="tall-input wrap-text" required>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
